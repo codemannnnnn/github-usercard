@@ -31,8 +31,61 @@
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
+// const followersArray = [
+//   {
+//       userPro: 'https://api.github.com/users/tetondan',
+//       userPro: 'https://api.github.com/users/dustinmyers',
+//       userPro: 'https://api.github.com/users/justsml',
+//       userPro: 'https://api.github.com/users/luishrd',
+//       userPro: 'https://api.github.com/users/bigknell',
+//   }
+// ];
+//
+// function followersFunc (item){
+//   axios.get(item)
+//   .then()
+//     followersArray.forEach  (res) => {
+//     cards.appendChild(newCard(res))
+//   )
+// }
+// }
+//
+// followersFunc()
+
+getInfo()
 
 
+
+function axyFunc(user){
+  const prof = `https://api.github.com/users/${user}`
+  axios.get(prof)
+    .then(res => {
+      cards.appendChild(newCard(res))
+    })
+}
+
+
+
+const followersArray = ['bigknell', 'dustinmyers', 'justsml', 'luishrd', 'tetondan']
+
+followersArray.forEach(item => {
+
+  axyFunc(item)
+})
+
+axyFunc()
+
+//
+// for(i=0; i<followersArray.length;i++){
+// let githubObjectMe = axios.get(followersArray[i]);
+//
+// githubObjectMe.then(response => {
+//   let cards = document.querySelector('.cards');
+//   let newcard = cardCreate(response);
+//   cards.appendChild(newCard);
+//
+// });
+// }
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will
@@ -123,7 +176,7 @@ function newCard (obj) {
 
 }
 
-getInfo()
+
 // cards.appendChild(newCard(myCard))
 
 
@@ -142,7 +195,6 @@ getInfo()
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
-const followersArray = [];
 
 
 
